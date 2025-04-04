@@ -40,6 +40,8 @@ export const authOption: NextAuthOptions = {
         });
       }
 
+      user.id = existingUser._id.toString();
+
       return true;
     },
 

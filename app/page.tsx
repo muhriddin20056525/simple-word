@@ -1,13 +1,16 @@
-"use client";
-
 import GithubButton from "@/components/GithubButton";
 import GoogleButton from "@/components/GoogleButton";
-import { useSession } from "next-auth/react";
+import { authOption } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 import React from "react";
 
-export default function Home() {
-  const { data: session } = useSession();
-  console.log(session);
+export default async function Home() {
+  const session = await getServerSession(authOption);
+
+  if (session) {
+    redirect("/documents"); // login qilingan bo‘lsa dashboardga
+  }
 
   return (
     <div>
