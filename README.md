@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📄 simple-word
 
-## Getting Started
+**simple-word** — bu foydalanuvchi Google yoki GitHub orqali tizimga kirib, o‘z hujjatlarini yaratishi, ko‘rishi, tahrirlashi va o‘chirish imkoniyatiga ega bo‘lgan web-ilova.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔑 Asosiy funksiyalar
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Google yoki GitHub orqali login qilish
+- Foydalanuvchi maʼlumotlarini MongoDBʼga saqlash
+- Login qilingandan so‘ng quyidagi sahifalar mavjud bo‘ladi:
+  - 📝 **Create Document** – yangi hujjat yaratish
+  - 📁 **My Documents** – barcha hujjatlarni ko‘rish
+  - 🚪 **Logout** – tizimdan chiqish
+- Yaratilgan hujjatlarni:
+  - Ko‘rish
+  - Tahrirlash
+  - O‘chirish mumkin
+- Barcha himoyalangan sahifalar **middleware** orqali tekshiriladi
+- Hujjatlarni tahrirlash uchun **TipTap** editoridan foydalaniladi
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Ishlatilgan texnologiyalar
 
-## Learn More
+- **Next.js 15** – asosiy framework
+- **TypeScript** – ishonchli va aniqlik kiritilgan dasturlash
+- **NextAuth.js** – autentifikatsiya (Google/GitHub login)
+- **MongoDB** – maʼlumotlar bazasi
+- **Tailwind CSS** – foydalanuvchi interfeysi uchun
+- **Shadcn UI** – tayyor UI komponentlar
+- **TipTap** – matn muharriri (Word uslubida)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Loyiha tarkibi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/` – sahifalar
+- `components/` – komponentlar
+- `lib/` – autentifikatsiya, MongoDB ulanishi va boshqa yordamchi funksiyalar
+- `middleware.ts` – protected route'lar uchun tekshiruvchi qatlam
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
